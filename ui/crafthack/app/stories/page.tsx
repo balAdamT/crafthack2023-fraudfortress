@@ -1,12 +1,12 @@
 import { Stories } from "@/components/Stories";
-import { storyMock } from "@/mocks/storyMock";
+import { storyMock } from "@/db-mock/storyDB";
 
-export default async function Home() {
+export default async function Page() {
   const stories = storyMock;
-    
+
   return (
-      <div>
-        <Stories stories={stories} />
-      </div>
-  )
+    <div>
+      <Stories stories={stories} />
+    </div>
+  );
 }

@@ -15,10 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className="h-full w-full">
+      <body className="h-full w-full">
         <SessionContextProvider>
-          <div className="bg-purple-200 text-blue-800">
+          <div className="flex h-full w-full flex-col bg-gray-50 text-blue-800">
             <NavBar />
             {children}
           </div>

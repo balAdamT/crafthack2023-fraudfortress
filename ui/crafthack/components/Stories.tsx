@@ -5,6 +5,7 @@ import { z } from "zod";
 import { ScoreBadge } from "./ScoreBadge";
 import { LabeledElement } from "./LabeledElement";
 import { Opinion } from "./Opinion";
+import Link from "next/link";
 
 export function Stories(props: { stories: z.infer<typeof storiesSchema> }) {
   return (
@@ -20,13 +21,13 @@ export function Stories(props: { stories: z.infer<typeof storiesSchema> }) {
 
 function Story({ story }: { story: z.infer<typeof storySchema> }) {
   return (
-    <div className="m-4 rounded-lg bg-white p-4 text-2xl text-blue-800 shadow-lg ">
+    <div className="m-4 rounded-lg bg-purple-100 p-4 text-2xl text-blue-800 shadow-xl ">
       <h2 className="mb-2 border-b-2 border-purple-800 pb-1 text-4xl font-bold">
         {story.summary}
       </h2>
       <p className="text-xl text-blue-700">{story.userStory}</p>
       <div className="mt-8 flex flex-col items-center justify-between  pt-4">
-        <h3 className="text- inline-block rounded-full border-2 border-purple-800 bg-purple-200 p-2 font-bold">
+        <h3 className="text- inline-block rounded-full border-2 border-purple-800 bg-purple-200 p-3 font-bold">
           Is this a scam?
         </h3>
         <div className="mt-4 grid w-8/12 grid-cols-3 grid-rows-1">
@@ -45,6 +46,9 @@ function Story({ story }: { story: z.infer<typeof storySchema> }) {
         <p>{`Posted by ${
           story.postedBy
         } on ${story.postedOn.toLocaleDateString()}`}</p>
+        <Link className="ml-auto underline" href={`story/${story.id}`}>
+          Review AI result
+        </Link>
       </div>
     </div>
   );

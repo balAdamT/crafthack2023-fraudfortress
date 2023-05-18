@@ -5,6 +5,7 @@ type Props = {
 };
 
 const computeClass = (value: number) => {
+  if (value === 0) return "bg-gray-600 text-gray-200";
   if (value < 1) return "bg-green-600 text-green-300";
   if (value < 2) return "bg-green-500 text-green-200";
   if (value < 3) return "bg-green-400 text-green-700";
@@ -20,14 +21,13 @@ const computeClass = (value: number) => {
 
 export const ScoreBadge: React.FC<Props> = ({ value }) => {
   const colorClass = computeClass(value);
-
-  console.log(`${value} mapped to ${colorClass}`);
+  const label = value > 0 ? `${value * 10} %` : "?";
 
   return (
     <div
       className={`flex h-12 w-20 flex-row items-center justify-center rounded-full ${colorClass}`}
     >
-      <p className="text-center">{value * 10} %</p>
+      <p className="text-center">{label}</p>
     </div>
   );
 };
