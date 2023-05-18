@@ -1,3 +1,4 @@
+import { NavigateButton } from "@/components/NavigateButton";
 import { storyMock as stories } from "@/db-mock/storyDB";
 
 async function getData(story: string) {
@@ -28,7 +29,10 @@ export default async function Page({ params }: { params: { id: string } }) {
         <h1 className="mt-4 text-2xl font-extrabold">
           And this is the evaluation of our anti-fraud AI
         </h1>
-        <p className="mt-2 text-xl">{parts[2]}</p>
+        <p className="mt-2 text-xl">{parts[2]}</p>{" "}
+        <div className="mt-4 rounded-lg bg-purple-800 p-2 font-semibold text-yellow-200">
+          <NavigateButton text={"Go back"} to="/stories" />
+        </div>
       </div>
     </div>
   );
