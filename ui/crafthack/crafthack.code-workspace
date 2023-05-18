@@ -1,8 +1,31 @@
 {
 	"folders": [
-		{
-			"path": "."
-		}
+	  {
+		"path": "."
+	  }
 	],
-	"settings": {}
-}
+	"settings": {
+	  "files.associations": {
+		"*.css": "tailwindcss"
+	  },
+	  "editor.quickSuggestions": {
+		"strings": true
+	  },
+	  "[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnPaste": false, // required
+		"editor.formatOnType": false, // required
+		"editor.formatOnSave": true, // optional
+		"editor.formatOnSaveMode": "file", // required to format on save
+	  },
+	  // TODO abalint Prefer to refactor into one section
+	  "[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnPaste": false, // required
+		"editor.formatOnType": false, // required
+		"editor.formatOnSave": true, // optional
+		"editor.formatOnSaveMode": "file", // required to format on save
+	  },
+	},
+  }
+  
