@@ -1,4 +1,4 @@
-export default function Loading() {
+export function Loading({ text }: { text: string }) {
   return (
     <div className="flex grow flex-col items-center justify-center">
       <div
@@ -9,9 +9,7 @@ export default function Loading() {
           Loading...
         </span>
       </div>
-      <span className="mt-10 text-4xl">
-        Please wait while our AI processes the story!
-      </span>
+      <span className="mt-10 text-4xl">{text}</span>
     </div>
   );
 }

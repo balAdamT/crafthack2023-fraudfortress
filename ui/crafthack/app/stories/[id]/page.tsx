@@ -18,8 +18,18 @@ async function getData(story: string) {
 export default async function Page({ params }: { params: { id: string } }) {
   const story = stories.find((story) => story.id === params.id);
   const evaluation = await getData(story!.userStory);
+  const parts = evaluation.split(/\r?\n/);
 
-  // TODO abalint Update AI score
-
-  return <div>{evaluation}</div>;
+  return (
+    <div className="mt-4 flex flex-col items-center">
+      <div className="flex w-8/12 flex-col items-center rounded-lg bg-purple-100 p-8 shadow-lg">
+        <h1 className=" text-2xl font-extrabold">Here is what happened</h1>
+        <p className="mt-2 text-xl">{story?.userStory}</p>
+        <h1 className="mt-4 text-2xl font-extrabold">
+          And this is the evaluation of our anti-fraud AI
+        </h1>
+        <p className="mt-2 text-xl">{parts[2]}</p>
+      </div>
+    </div>
+  );
 }

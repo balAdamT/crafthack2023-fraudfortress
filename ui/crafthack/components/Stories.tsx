@@ -46,8 +46,8 @@ function Story({ story }: { story: z.infer<typeof storySchema> }) {
         <p>{`Posted by ${
           story.postedBy
         } on ${story.postedOn.toLocaleDateString()}`}</p>
-        <Link className="ml-auto underline" href={`story/${story.id}`}>
-          Review AI result
+        <Link className="ml-auto underline" href={`stories/${story.id}`}>
+          Review AI evaluation
         </Link>
       </div>
     </div>
